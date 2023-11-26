@@ -1,7 +1,7 @@
 # miniproj
 ### install flutter from the following website
 <a href="https://docs.flutter.dev/get-started/install/windows">Download Flutter</a>
-## extract and copy the folder to c drive and  add its pathv to system environment path
+### extract and copy the folder to c drive and  add its pathv to system environment path
 ### install other requirements from requirements folder
 ### then open vs code in btdc/tdir folder
 ### from windows/flutter delete ephemeral folder
