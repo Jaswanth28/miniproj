@@ -8,28 +8,27 @@ import 'package:tumorscan/history.dart';
 import 'package:flutter/material.dart';
 import 'package:tumorscan/SignupPage.dart';
 
-
+final ThemeData theme = ThemeData.light(useMaterial3: false);
 Future<void> main() async {
-  runApp(const MyApp());  
+  runApp(const MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: theme,
       title: 'Signup App',
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
       routes: {
-  '/signup': (context) => const SignupPage(),
-  '/login': (context) => const LoginPage(),
-  '/welcome': (context) => const WelcomePage(),
-  '/history':(context) => const History(),
-},
-
+        '/signup': (context) => const SignupPage(),
+        '/login': (context) => const LoginPage(),
+        '/welcome': (context) => const WelcomePage(),
+        '/history': (context) => const History(),
+      },
     );
   }
 }
@@ -39,7 +38,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       body: Center(
         child: Stack(
@@ -47,7 +45,8 @@ class HomePage extends StatelessWidget {
           children: [
             // Background blur layer
             ImageFiltered(
-              imageFilter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0), // Apply the blur effect
+              imageFilter: ui.ImageFilter.blur(
+                  sigmaX: 5.0, sigmaY: 5.0), // Apply the blur effect
               child: Image.asset(
                 'assets/Flowers_02_4K.jpg', // Replace 'your_image.png' with the actual image path
                 width: double.infinity,
@@ -65,7 +64,8 @@ class HomePage extends StatelessWidget {
                   height: 250,
                   fit: BoxFit.cover,
                 ),
-                const SizedBox(height: 20), // Add some spacing between the image and text
+                const SizedBox(
+                    height: 20), // Add some spacing between the image and text
                 const Text(
                   'Welcome to Tumor Scan',
                   style: TextStyle(
@@ -74,7 +74,8 @@ class HomePage extends StatelessWidget {
                     color: Colors.white, // Adjust the text color as needed
                   ),
                 ),
-                const SizedBox(height: 20), // Add some spacing between the text and button
+                const SizedBox(
+                    height: 20), // Add some spacing between the text and button
                 ElevatedButton(
                   onPressed: () async {
                     // Navigate to the LoginPage when the button is pressed
